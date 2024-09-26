@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Testing</title>
+  <script>
+
+
+  function changeItemColorHandler() {
+    const items = document.getElementsByClassName('item');
+    for (let i = 0; i < items.length; i++) {
+        items[i].classList.add('green-bg');
+    }
+  }
+
+  function addItemHandler() {
+      const container = document.getElementById('container');
+      console.log(container);
+      if (container) {
+          const item = document.createElement('div');
+          item.classList.add('item');
+          container.appendChild(item);
+      }
+  }
+
+  function clickHandler() {
+      const elem = document.getElementById('result');
+      if (elem) {
+          elem.innerText = 'true';
+      }
+    }
+
+    document.addEventListener()
+  </script>
+  <style>
+      .green-bg {
+          background-color: green !important;
+      }
+    .item {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1 id>Click button below</h1>
+    <button onclick="clickHandler()" id="button">Click me</button>
+    Is Button Clicked ? <span id="result">false</span>
+
+    <h1 id>Click button below to add item inside the container</h1>
+    <button onclick="addItemHandler()" id="item-add-btn">Click me</button>
+    <div style="display: flex; gap: 8px" id="container">
+
+    </div>
+
+    <h1 id>Click button below to change the color to green</h1>
+    <button onclick="changeItemColorHandler()" id="item-color-change-btn">Click me</button>
+  </main>
+</body>
+</html>
